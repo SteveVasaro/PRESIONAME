@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorpresa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffe4e1;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .hidden {
+            display: none;
+        }
+        .hearts {
+            font-size: 30px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="nameContainer">
+        <h2>Ingresa tu nombre</h2>
+        <input type="text" id="nameInput" placeholder="Escribe tu nombre">
+        <button onclick="checkName()">Entrar</button>
+    </div>
+    
+    <div class="container hidden" id="messageContainer">
+        <h2>¿Me aceptas una cita hoy?</h2>
+        <div class="hearts">❤️❤️❤️❤️❤️</div>
+    </div>
+    
+    <script>
+        function checkName() {
+            var name = document.getElementById("nameInput").value.trim();
+            if (name.toLowerCase() === "ivania") {
+                document.getElementById("nameContainer").classList.add("hidden");
+                document.getElementById("messageContainer").classList.remove("hidden");
+            } else {
+                alert("Lo siento, esta sorpresa es solo para Ivania.");
+            }
+        }
+    </script>
+</body>
+</html>
